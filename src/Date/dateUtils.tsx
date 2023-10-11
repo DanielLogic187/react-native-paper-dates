@@ -62,7 +62,10 @@ export function getFirstDayOfMonth({
   year: number
   month: number
 }): number {
-  return new Date(year, month, 1).getDay()
+  const numberDayWeek = [6, 0, 1, 2, 3, 4, 5]
+  const dayWeek = new Date(year, month, 1).getDay()
+
+  return numberDayWeek[dayWeek]
 }
 
 export function useRangeChecker(validRange: ValidRangeType | undefined) {
